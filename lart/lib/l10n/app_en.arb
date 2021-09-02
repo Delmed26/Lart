@@ -1,0 +1,8 @@
+{
+    "helloWorld": "Hello World!",
+    "createAccount": "Create an account",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password"
+}

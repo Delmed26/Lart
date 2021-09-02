@@ -1,0 +1,8 @@
+{
+    "helloWorld": "¡Hola Mundo!",
+    "createAccount": "Crea una cuenta",
+    "name": "Nombre",
+    "email": "Correo",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña"
+}
