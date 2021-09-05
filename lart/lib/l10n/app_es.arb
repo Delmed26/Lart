@@ -4,5 +4,7 @@
     "name": "Nombre",
     "email": "Correo",
     "password": "Contraseña",
-    "confirmPassword": "Confirmar contraseña"
+    "confirmPassword": "Confirmar contraseña",
+    "signUp": "Registrarse",
+    "alreadyAccount": "¿Ya tienes una cuenta? haz clic aquí"
 }
