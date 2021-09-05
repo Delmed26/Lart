@@ -6,5 +6,9 @@
     "password": "Password",
     "confirmPassword": "Confirm password",
     "signUp": "Sign up",
-    "alreadyAccount": "Already have an account? Click here"
+    "alreadyAccount": "Already have an account? Click here",
+    "login": "Login",
+    "forgotPassword": "Forgot password",
+    "messageForgotPassword": "Please enter your email to search for your account",
+    "sendMail": "Send mail"
 }

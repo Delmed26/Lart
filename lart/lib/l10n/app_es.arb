@@ -6,5 +6,9 @@
     "password": "Contraseña",
     "confirmPassword": "Confirmar contraseña",
     "signUp": "Registrarse",
-    "alreadyAccount": "¿Ya tienes una cuenta? haz clic aquí"
+    "alreadyAccount": "¿Ya tienes una cuenta? haz clic aquí",
+    "login": "Inicia sesión",
+    "forgotPassword": "Olvidé mi contraseña",
+    "messageForgotPassword": "Por favor introduce tu correo para buscar tu cuenta",
+    "sendMail": "Enviar correo"
 }

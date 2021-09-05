@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lart/ui/pages/forgotPassword_page.dart';
+import 'package:lart/ui/pages/login_page.dart';
 import 'package:lart/ui/pages/signup_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,11 +18,14 @@ class MyApp extends StatelessWidget {
       title: 'Lart',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          accentColor: Color.fromRGBO(24, 212, 124, 100),
-          brightness: Brightness.light,
-          textTheme: GoogleFonts.robotoSlabTextTheme()),
-      initialRoute: 'login',
-      routes: {'login': (_) => LoginScreen()},
+        accentColor: Color.fromRGBO(24, 212, 124, 100),
+        brightness: Brightness.light),
+      initialRoute: 'signup',
+      routes: {
+        'signup': (_) => SignupScreen(),
+        'login': (_) => LoginScreen(),
+        'forgotPassword': (_) => ForgotPasswordScreen()
+      },
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

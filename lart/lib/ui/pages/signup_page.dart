@@ -4,11 +4,11 @@ import 'package:lart/ui/shared/styles.dart';
 import 'package:lart/ui/widgets/textField_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(242, 242, 242, 1),
+      backgroundColor: kcBackgroundColor,
       body: SafeArea(
         child: Container(
           alignment: Alignment.center,
@@ -66,7 +66,9 @@ class LoginScreen extends StatelessWidget {
                   child: Align(
                     alignment: FractionalOffset.bottomCenter,
                     child: MaterialButton(
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Navigator.pushNamed(context, 'login')
+                      },
                       child: Text(AppLocalizations.of(context)!.alreadyAccount, style: TextStyle(color: Color.fromRGBO(24, 212, 124, 1.0))),
                     ),
                   ),
