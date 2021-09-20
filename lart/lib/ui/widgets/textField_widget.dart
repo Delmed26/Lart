@@ -13,39 +13,51 @@ class PersonalizedTextField extends StatelessWidget {
   PersonalizedTextField({
     required this.textInputType, 
     required this.hintText, 
-    this.obscureText = false, 
-    this.autocorrect = true, 
-    this.suggestions = true});
+    required this.controller,
+    this.isPassword = false
+  });
 
   final TextInputType textInputType;
   final String hintText;
-  final bool obscureText;
-  final bool autocorrect;
-  final bool suggestions;
+  final bool isPassword;
+  final TextEditingController controller;
+  
 
   @override
   Widget build(BuildContext context) {
+
+    bool autocorrect = !isPassword;
+    bool suggestions = !isPassword;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      child: TextField(
-          obscureText: obscureText,
-          enableSuggestions: suggestions,
-          autocorrect: autocorrect,
-          keyboardType: textInputType,
-          style: GoogleFonts.aBeeZee(
-              textStyle: TextStyle(color: Color.fromRGBO(24, 212, 124, 1.0))),
-          decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            hintText: hintText,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(5),
-              borderSide: BorderSide(
-                width: 0,
-                style: BorderStyle.none,
-              ),
+      child: TextFormField(
+        controller: controller,
+        obscureText: isPassword,
+        enableSuggestions: suggestions,
+        autocorrect: autocorrect,
+        validator: (text) {
+          if (text == null || text.isEmpty) {
+            return 'Text is empty';
+          }
+          return null;
+        },
+        keyboardType: textInputType,
+        style: GoogleFonts.aBeeZee(
+            textStyle: TextStyle(color: Color.fromRGBO(24, 212, 124, 1.0))),
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.white,
+          hintText: hintText,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(5),
+            borderSide: BorderSide(
+              width: 0,
+              style: BorderStyle.none,
             ),
-          )),
+          ),
+        )
+      ),
     );
   }
 }

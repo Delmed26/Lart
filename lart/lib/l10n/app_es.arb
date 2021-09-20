@@ -5,10 +5,23 @@
     "email": "Correo",
     "password": "Contraseña",
     "confirmPassword": "Confirmar contraseña",
+
+
     "signUp": "Registrarse",
     "alreadyAccount": "¿Ya tienes una cuenta? haz clic aquí",
     "login": "Inicia sesión",
     "forgotPassword": "Olvidé mi contraseña",
     "messageForgotPassword": "Por favor introduce tu correo para buscar tu cuenta",
-    "sendMail": "Enviar correo"
+    "sendMail": "Enviar correo",
+    "weakPassword": "La contraseña es muy corta.",
+
+
+    "accountExists": "Ya existe una cuenta registrada con este correo.",
+    "noUserFound": "No se encontró un usuario con ese correo.",
+    "wrondPassword": "La contraseña ingresada es incorrecta.",
+
+
+    "getPremium": "Obtener premium",
+    "account": "Cuenta",
+    "settings": "Opciones"
 }

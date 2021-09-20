@@ -5,10 +5,23 @@
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
+
+
     "signUp": "Sign up",
     "alreadyAccount": "Already have an account? Click here",
     "login": "Login",
     "forgotPassword": "Forgot password",
     "messageForgotPassword": "Please enter your email to search for your account",
-    "sendMail": "Send mail"
+    "sendMail": "Send mail",
+    "weakPassword": "The password provided is too weak.",
+
+
+    "accountExists": "The account already exists for that email.",
+    "noUserFound": "No user found for that email.",
+    "wrondPassword": "Wrong password provided for that user.",
+
+
+    "getPremium": "Get Premium",
+    "account": "Account",
+    "settings": "Settings"
 }

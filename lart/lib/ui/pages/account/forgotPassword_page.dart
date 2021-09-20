@@ -5,7 +5,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:lart/ui/widgets/textField_widget.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  const ForgotPasswordScreen({Key? key}) : super(key: key);
+
+  final TextEditingController _emailController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +28,16 @@ class ForgotPasswordScreen extends StatelessWidget {
                   Text(AppLocalizations.of(context)!.messageForgotPassword,
                       style: ktsBody),
                   PersonalizedTextField(
-                      textInputType: TextInputType.emailAddress,
-                      hintText: AppLocalizations.of(context)!.email),
+                    textInputType: TextInputType.emailAddress,
+                    hintText: AppLocalizations.of(context)!.email,
+                    controller: _emailController
+                  ),
                   Padding(
                       padding: const EdgeInsets.only(top: 20.0),
                       child: ElevatedButton(
-                        onPressed: (){},
-                        child: Text(AppLocalizations.of(context)!.sendMail),
-                        style: kbsButton
-                      )
-                    ),
+                          onPressed: () {},
+                          child: Text(AppLocalizations.of(context)!.sendMail),
+                          style: kbsButton)),
                 ],
               ),
             ),
