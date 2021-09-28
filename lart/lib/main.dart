@@ -13,35 +13,32 @@ import 'package:get/get.dart';
 
 import 'Data/Repositories/auth_services.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-  
-  runApp(App(_initialization));
+  runApp(App());
 }
 
 class App extends StatefulWidget {
-  App(this.initialization);
-  final Future<FirebaseApp> initialization;
-  
 
   @override
-  _AppState createState() => _AppState(initialization);
+  _AppState createState() => _AppState();
 }
 
 class _AppState extends State<App> {
   /// The future is part of the state of our widget. We should not call `initializeApp`
   /// directly inside [build].
-  _AppState(this.initialization);
-  final Future<FirebaseApp> initialization;
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: initialization,
+      future: _initialization,
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          AuthenticationService authenticationService = new AuthenticationService(context);
+        if (snapshot.hasError) return SomethingWentWrong();
+
+        if (snapshot.connectionState == ConnectionState.done){
+          // ignore: unused_local_variable
+          AuthenticationService _auth = Get.put(AuthenticationService());
           return Lart();
         }
 
@@ -50,6 +47,8 @@ class _AppState extends State<App> {
     );
   }
 }
+
+
 
 class Lart extends StatelessWidget {
   const Lart({
@@ -63,11 +62,8 @@ class Lart extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.light(
-          secondary: kcSecondaryColor,
-          primary: kcPrimaryColor
-        ),
-        brightness: Brightness.light
-      ),
+            secondary: kcSecondaryColor, primary: kcPrimaryColor),
+        brightness: Brightness.light),
       navigatorKey: NavigationService.instance.navigatorKey,
       initialRoute: 'signup',
       routes: {

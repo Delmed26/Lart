@@ -1,7 +1,7 @@
 {
     "helloWorld": "Hello World!",
     "createAccount": "Create an account",
-    "name": "Name",
+    "name": "Username",
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
@@ -13,12 +13,14 @@
     "forgotPassword": "Forgot password",
     "messageForgotPassword": "Please enter your email to search for your account",
     "sendMail": "Send mail",
+
+
     "weakPassword": "The password provided is too weak.",
-
-
     "accountExists": "The account already exists for that email.",
     "noUserFound": "No user found for that email.",
     "wrondPassword": "Wrong password provided for that user.",
+    "passwordDontMatch": "Passwords do not match.",
+    "fieldRequired": "This field is required.",
 
 
     "getPremium": "Get Premium",
