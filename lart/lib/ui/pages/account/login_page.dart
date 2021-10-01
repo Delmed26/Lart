@@ -55,8 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         textInputType: TextInputType.emailAddress,
                         hintText: AppLocalizations.of(context)!.email,
                         controller: _emailController,
-                        errorText:
-                            _emailError.isNotEmpty ? _emailError : null,
+                        errorText: _emailError.isNotEmpty ? _emailError : null,
                       ),
                       PersonalizedTextField(
                         textInputType: TextInputType.visiblePassword,
@@ -108,26 +107,44 @@ class _LoginScreenState extends State<LoginScreen> {
     else
       _passError = '';
 
-    if(_emailError.isEmpty && _emailError.isEmpty){
+    if (_emailError.isEmpty && _emailError.isEmpty) {
       AuthenticationService _authentication = Get.find();
       String code = await _authentication.login(
           email: _emailController.text, password: _passwordController.text);
 
-      if (code == 'user-not-found') {
-        _emailError = AppLocalizations.of(context)!.noUserFound;
-      } else
-        _emailError = '';
-      if (code == 'wrong-password') {
-        _passError = AppLocalizations.of(context)!.wrondPassword;
-      } else
-        _passError = '';
-      if (code == 'network-request-failed') {
-        Get.snackbar('Error', 'Error de red');
-      }
-      if (code == '') {
-        return;
+      switch (code) {
+        case 'invalid-email':
+          _emailError = AppLocalizations.of(context)!.invalidEmail;
+          break;
+        case 'user-not-found':
+          _emailError = AppLocalizations.of(context)!.noUserFound;
+          break;
+        case 'wrong-password':
+          _passError = AppLocalizations.of(context)!.wrondPassword;
+          break;
+        case 'network-request-failed':
+          Get.snackbar('Error', 'Error de red');
+          break;
+        default:
+          _emailError = '';
+          _passError = '';
+          break;
       }
 
+      // if (code == 'user-not-found') {
+      //   _emailError = AppLocalizations.of(context)!.noUserFound;
+      // } else
+      //   _emailError = '';
+      // if (code == 'wrong-password') {
+      //   _passError = AppLocalizations.of(context)!.wrondPassword;
+      // } else
+      //   _passError = '';
+      // if (code == 'network-request-failed') {
+      //   Get.snackbar('Error', 'Error de red');
+      // }
+      // if (code == '') {
+      //   return;
+      // }
     }
   }
 }

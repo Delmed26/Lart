@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lart/Data/Repositories/ad_state.dart';
 import 'package:lart/ui/pages/account/forgotPassword_page.dart';
 import 'package:lart/ui/pages/account/login_page.dart';
 import 'package:lart/ui/pages/account/signup_page.dart';
@@ -10,16 +11,23 @@ import 'package:lart/ui/shared/styles.dart';
 import 'package:lart/ui/utils/navigation_service.dart';
 import 'package:lart/ui/widgets/loading_widget.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 
 import 'Data/Repositories/auth_services.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
+  final initFuture = MobileAds.instance.initialize();
+  final adState = AdState(initFuture);
+  runApp(Provider.value(
+      value: adState,
+      builder: (context, child) => App(),
+    )
+  );
 }
 
 class App extends StatefulWidget {
-
   @override
   _AppState createState() => _AppState();
 }
@@ -36,7 +44,7 @@ class _AppState extends State<App> {
       builder: (context, snapshot) {
         if (snapshot.hasError) return SomethingWentWrong();
 
-        if (snapshot.connectionState == ConnectionState.done){
+        if (snapshot.connectionState == ConnectionState.done) {
           // ignore: unused_local_variable
           AuthenticationService _auth = Get.put(AuthenticationService());
           return Lart();
@@ -48,24 +56,21 @@ class _AppState extends State<App> {
   }
 }
 
-
-
 class Lart extends StatelessWidget {
-  const Lart({
-    Key? key,
-  }) : super(key: key);
+  final AuthenticationService _auth = Get.find();
 
   @override
   Widget build(BuildContext context) {
+    _auth.createFirebaseAuth();
     return GetMaterialApp(
       title: 'Lart',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.light(
-            secondary: kcSecondaryColor, primary: kcPrimaryColor),
-        brightness: Brightness.light),
+          colorScheme: ColorScheme.light(
+              secondary: kcSecondaryColor, primary: kcPrimaryColor),
+          brightness: Brightness.light),
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: 'signup',
+      initialRoute: _auth.getInitialRoute(),
       routes: {
         'signup': (_) => SignupScreen(),
         'login': (_) => LoginScreen(),

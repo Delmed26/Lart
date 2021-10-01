@@ -11,11 +11,6 @@ bool _isLoading = false;
 AuthenticationService _auth = Get.find();
 
 class SignupScreen extends StatefulWidget {
-  SignupScreen(){
-    _auth.createFirebaseAuth();
-
-  }
-
   @override
   _SignupScreenState createState() => _SignupScreenState();
 }
@@ -251,9 +246,11 @@ Future<void> signUp(BuildContext context) async {
       !_passHasError &&
       !_confirmPassHasError) {
     if (_passController.text == _confirmPassController.text) {
-      AuthenticationService _authentication = Get.find();
-      String code = await _authentication.signUp(
-          email: _emailController.text, password: _passController.text);
+      String code = await _auth.signUp(
+          email: _emailController.text,
+          password: _passController.text,
+          username: _nameController.text
+      );
 
       if (code == 'weak-password') {
         _passError = AppLocalizations.of(context)!.weakPassword;

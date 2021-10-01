@@ -13,6 +13,7 @@
     "forgotPassword": "Olvidé mi contraseña",
     "messageForgotPassword": "Por favor introduce tu correo para buscar tu cuenta",
     "sendMail": "Enviar correo",
+    "invalidEmail": "este no es un correo válido.",
 
 
     "weakPassword": "La contraseña es muy corta.",
@@ -21,6 +22,9 @@
     "wrondPassword": "La contraseña ingresada es incorrecta.",
     "passwordDontMatch": "Las contraseñas no coinciden",
     "fieldRequired": "Ese campo es obligatorio.",
+
+
+    "emailSent": "Correo enviado",
 
 
     "getPremium": "Obtener premium",

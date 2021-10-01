@@ -14,7 +14,7 @@ class NavigationService {
   }
 
   Future<dynamic> navigateToAndDeletePrevious(String routeName) {
-    return navigatorKey.currentState!.pushReplacementNamed(routeName);
+    return navigatorKey.currentState!.pushNamedAndRemoveUntil(routeName, (Route<dynamic> route) => false);
   }
 
   bool goBack() {

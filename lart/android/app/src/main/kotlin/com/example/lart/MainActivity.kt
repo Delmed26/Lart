@@ -1,4 +1,4 @@
-package com.example.lart
+package com.fernandodelgadillo.lart
 
 import io.flutter.embedding.android.FlutterActivity
 

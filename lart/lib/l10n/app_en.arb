@@ -13,6 +13,7 @@
     "forgotPassword": "Forgot password",
     "messageForgotPassword": "Please enter your email to search for your account",
     "sendMail": "Send mail",
+    "invalidEmail": "This is not a valid email.",
 
 
     "weakPassword": "The password provided is too weak.",
@@ -21,6 +22,9 @@
     "wrondPassword": "Wrong password provided for that user.",
     "passwordDontMatch": "Passwords do not match.",
     "fieldRequired": "This field is required.",
+
+
+    "emailSent": "Email sent",
 
 
     "getPremium": "Get Premium",
