@@ -4,7 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:lart/ui/shared/styles.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MenuLateral extends StatelessWidget {
+class LateralMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Drawer(

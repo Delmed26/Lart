@@ -5,6 +5,7 @@
     "email": "Correo",
     "password": "Contraseña",
     "confirmPassword": "Confirmar contraseña",
+    "somethingWrong": "Algo salió mal",
 
 
     "signUp": "Registrarse",
@@ -29,5 +30,8 @@
 
     "getPremium": "Obtener premium",
     "account": "Cuenta",
-    "settings": "Opciones"
+    "settings": "Opciones",
+
+
+    "noDataLists": "Aún no tienes listas, crea una presionando el botón '+'"
 }

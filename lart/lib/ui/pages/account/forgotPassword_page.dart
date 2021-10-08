@@ -70,8 +70,6 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
       AuthenticationService _auth = Get.find();
 
       String code = await _auth.forgotPassword(email: _emailController.text);
-
-      // TODO: Print messages for forgotPassword
       switch (code) {
         case 'invalid-email':
           _emailError = AppLocalizations.of(context)!.invalidEmail;

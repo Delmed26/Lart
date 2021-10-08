@@ -5,6 +5,7 @@
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
+    "somethingWrong": "Somethig went wrong",
 
 
     "signUp": "Sign up",
@@ -29,5 +30,8 @@
 
     "getPremium": "Get Premium",
     "account": "Account",
-    "settings": "Settings"
+    "settings": "Settings",
+
+
+    "noDataLists": "You didnt have lists, create one with the button '+'"
 }
