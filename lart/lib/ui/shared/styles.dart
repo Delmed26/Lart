@@ -10,6 +10,9 @@ const Color kcBackgroundColor = Color.fromRGBO(242, 242, 242, 1);
 const TextStyle ktsSubheader = TextStyle(
     fontSize: 20.0, fontWeight: FontWeight.bold, color: kcPrimaryColor);
 
+const TextStyle ktsTitle = TextStyle(
+    fontSize: 18.0, fontWeight: FontWeight.bold, color: kcPrimaryColor);
+
 const TextStyle ktsBody = TextStyle(fontSize: 14.0, color: kcSecondaryColor);
 
 const TextStyle ktsDrawerItem =

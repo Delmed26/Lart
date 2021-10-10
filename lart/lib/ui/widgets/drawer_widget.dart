@@ -7,6 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 class LateralMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String? _displayName = FirebaseAuth.instance.currentUser?.displayName;
+    String? _email = FirebaseAuth.instance.currentUser?.email;
     return new Drawer(
       child: Column(children: [
         Expanded(
@@ -17,8 +19,8 @@ class LateralMenu extends StatelessWidget {
                     gradient: LinearGradient(
                   colors: <Color>[kcPrimaryColor, kcBlueColor],
                 )),
-                accountName: Text("Fernando Delgadillo"),
-                accountEmail: Text("fer@test.com"),
+                accountName: Text(_displayName != null ? _displayName : ''),
+                accountEmail: Text(_email != null ? _email : ''),
               ),
               new ListTile(
                 leading: Icon(Icons.star_rounded, color: Color(0xFFE4D834)),

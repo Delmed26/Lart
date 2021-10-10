@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:lart/ui/pages/home/home_page.dart';
+import 'package:lart/ui/pages/list/listItems_page.dart';
 import 'package:lart/ui/shared/styles.dart';
 import 'package:lart/ui/utils/navigation_service.dart';
 import 'package:lart/ui/widgets/loading_widget.dart';
@@ -75,7 +76,8 @@ class Lart extends StatelessWidget {
         'signup': (_) => SignupScreen(),
         'login': (_) => LoginScreen(),
         'forgotPassword': (_) => ForgotPasswordScreen(),
-        'homePage': (_) => HomePage()
+        'homePage': (_) => HomePage(),
+        'listItems': (_) => ListItemsPage()
       },
       localizationsDelegates: [
         AppLocalizations.delegate,

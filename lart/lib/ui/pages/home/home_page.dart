@@ -1,10 +1,6 @@
-import 'dart:ffi';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:lart/Data/Repositories/ad_state.dart';
-import 'package:lart/main.dart';
 import 'package:lart/ui/pages/home/widgets/listItem_widget.dart';
 import 'package:lart/ui/shared/styles.dart';
 import 'package:lart/ui/widgets/drawer_widget.dart';
@@ -75,38 +71,41 @@ class _HomePageState extends State<HomePage> {
                   child: FutureBuilder<DocumentSnapshot>(
                 future:
                     usersInfo.doc(FirebaseAuth.instance.currentUser!.uid).get(),
-                    builder: (BuildContext context,
-                      AsyncSnapshot<DocumentSnapshot> snapshot) {
-                    if (snapshot.hasError) {
-                      return Center(
-                        child: Text(AppLocalizations.of(context)!.somethingWrong),
-                      );
-                    }
+                builder: (BuildContext context,
+                    AsyncSnapshot<DocumentSnapshot> snapshot) {
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(AppLocalizations.of(context)!.somethingWrong),
+                    );
+                  }
 
-                    if (snapshot.hasData && !snapshot.data!.exists) {
-                      return Center(
-                        child: Text(AppLocalizations.of(context)!.noDataLists),
-                      );
-                    }
+                  if (snapshot.hasData && !snapshot.data!.exists) {
+                    return Center(
+                      child: Text(AppLocalizations.of(context)!.noDataLists),
+                    );
+                  }
 
-                    if (snapshot.connectionState == ConnectionState.done) {
-                      Map<String, dynamic> data =
-                          snapshot.data!.data() as Map<String, dynamic>;
-                      return ListView.builder(
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    Map<String, dynamic> data =
+                        snapshot.data!.data() as Map<String, dynamic>;
+                    return ListView.builder(
                         itemCount: (data['lists'] as List<dynamic>).length,
                         itemBuilder: (BuildContext context, int i) {
+                          var percentage =
+                              data['lists'][i]['percentageCompleted'];
                           return ListItemWidget(
                             name: data['lists'][i]['name'].toString(),
                             date: data['lists'][i]['dateOfExpire'],
+                            progress: percentage.toDouble(),
+                            isShared: data['lists'][i]['isShared'],
+                            listPath: data['lists'][i]['list'],
                           );
-                        }
-                      );
-                    }
+                        });
+                  }
 
-                    return LoadingWidget();
-                  },
-                )
-              ),
+                  return LoadingWidget();
+                },
+              )),
               isBannerReady == false
                   ? SizedBox(height: 50)
                   : Container(height: 50, child: AdWidget(ad: banner))
