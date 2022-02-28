@@ -9,4 +9,3 @@ Crear una aplicación que sea capáz de crear listas utilizando inteligencia art
 * Uso de Firebase Firestore para almacenar información
 * Interfaz amigable
 
-Visite la lista de cosas por hacer del [proyecto](https://github.com/Delmed26/Lart/projects/1)
