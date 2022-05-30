@@ -20,7 +20,7 @@
     "weakPassword": "La contraseña es muy corta.",
     "accountExists": "Ya existe una cuenta registrada con este correo.",
     "noUserFound": "No se encontró un usuario con ese correo.",
-    "wrondPassword": "La contraseña ingresada es incorrecta.",
+    "wrongPassword": "La contraseña ingresada es incorrecta.",
     "passwordDontMatch": "Las contraseñas no coinciden",
     "fieldRequired": "Ese campo es obligatorio.",
 

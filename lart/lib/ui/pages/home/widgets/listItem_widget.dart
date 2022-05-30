@@ -10,7 +10,7 @@ class ListItemWidget extends StatelessWidget {
       required this.name,
       required this.date,
       required this.progress,
-      required this.isShared, 
+      required this.isShared,
       required this.listPath})
       : super(key: key);
 
@@ -24,7 +24,8 @@ class ListItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'listItems', arguments: {'listPath': listPath});
+        Navigator.pushNamed(context, 'listItems',
+            arguments: {'listPath': listPath});
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
@@ -39,17 +40,17 @@ class ListItemWidget extends StatelessWidget {
                   spreadRadius: 5,
                   offset: Offset(0, 3))
             ]),
-        child: Row(children: [
+        child:
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Flexible(
             child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(name, style: ktsTitle, overflow: TextOverflow.ellipsis),
-                Text(
-                  DateFormat('yyyy-MM-dd hh:mm').format(date.toDate()),
-                  style: ktsDrawerItem,
-                )
-              ]
-            ),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Text(name, style: ktsTitle, overflow: TextOverflow.ellipsis),
+              Text(
+                DateFormat('yyyy-MM-dd hh:mm').format(date.toDate()),
+                style: ktsDrawerItem,
+              )
+            ]),
           ),
           isShared == true
               ? SizedBox(

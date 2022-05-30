@@ -114,7 +114,7 @@ class SomethingWentWrong extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Algo salio mal :c'),
+          child: Text('Algo salio mal'),
         ),
       ),
     );

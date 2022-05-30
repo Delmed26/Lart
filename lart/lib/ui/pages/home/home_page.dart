@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: kcPrimaryColor),
+        iconTheme: IconThemeData(color: kcSecondaryColor),
         title: Text('Lart', style: ktsSubheader),
       ),
       body: Container(

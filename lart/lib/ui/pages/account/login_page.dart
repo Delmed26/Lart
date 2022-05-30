@@ -120,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
           _emailError = AppLocalizations.of(context)!.noUserFound;
           break;
         case 'wrong-password':
-          _passError = AppLocalizations.of(context)!.wrondPassword;
+          _passError = AppLocalizations.of(context)!.wrongPassword;
           break;
         case 'network-request-failed':
           Get.snackbar('Error', 'Error de red');

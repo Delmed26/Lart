@@ -5,7 +5,7 @@
     "email": "Email",
     "password": "Password",
     "confirmPassword": "Confirm password",
-    "somethingWrong": "Somethig went wrong",
+    "somethingWrong": "Something went wrong",
 
 
     "signUp": "Sign up",
@@ -20,7 +20,7 @@
     "weakPassword": "The password provided is too weak.",
     "accountExists": "The account already exists for that email.",
     "noUserFound": "No user found for that email.",
-    "wrondPassword": "Wrong password provided for that user.",
+    "wrongPassword": "Wrong password provided for that user.",
     "passwordDontMatch": "Passwords do not match.",
     "fieldRequired": "This field is required.",
 
